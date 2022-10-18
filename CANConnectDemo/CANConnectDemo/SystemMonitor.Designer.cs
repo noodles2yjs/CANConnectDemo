@@ -34,7 +34,6 @@ namespace CANConnectDemo
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox30 = new System.Windows.Forms.TextBox();
-            this.textBox28 = new System.Windows.Forms.TextBox();
             this.ucMeter3 = new HZH_Controls.Controls.UCMeter();
             this.ucMeter2 = new HZH_Controls.Controls.UCMeter();
             this.ucMeterVhicleSpeed = new HZH_Controls.Controls.UCMeter();
@@ -99,7 +98,6 @@ namespace CANConnectDemo
             this.lblFire = new System.Windows.Forms.Label();
             this.tbxFire = new System.Windows.Forms.TextBox();
             this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
-            this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
             this.SuspendLayout();
@@ -108,7 +106,6 @@ namespace CANConnectDemo
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
             this.panel1.Controls.Add(this.textBox30);
-            this.panel1.Controls.Add(this.textBox28);
             this.panel1.Controls.Add(this.ucMeter3);
             this.panel1.Controls.Add(this.ucMeter2);
             this.panel1.Controls.Add(this.ucMeterVhicleSpeed);
@@ -169,7 +166,6 @@ namespace CANConnectDemo
             this.panel1.Controls.Add(this.label24);
             this.panel1.Controls.Add(this.label23);
             this.panel1.Controls.Add(this.textBox1);
-            this.panel1.Controls.Add(this.label22);
             this.panel1.Controls.Add(this.textBox5);
             this.panel1.Controls.Add(this.lblFire);
             this.panel1.Controls.Add(this.tbxFire);
@@ -187,15 +183,6 @@ namespace CANConnectDemo
             this.textBox30.Size = new System.Drawing.Size(74, 23);
             this.textBox30.TabIndex = 4;
             this.textBox30.Text = "0.000";
-            // 
-            // textBox28
-            // 
-            this.textBox28.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.textBox28.Location = new System.Drawing.Point(376, 186);
-            this.textBox28.Name = "textBox28";
-            this.textBox28.Size = new System.Drawing.Size(74, 23);
-            this.textBox28.TabIndex = 4;
-            this.textBox28.Text = "0.000";
             // 
             // ucMeter3
             // 
@@ -842,16 +829,6 @@ namespace CANConnectDemo
             this.chart1.TabIndex = 3;
             this.chart1.Text = "chart1";
             // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("宋体", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.label22.Location = new System.Drawing.Point(274, 189);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(85, 14);
-            this.label22.TabIndex = 1;
-            this.label22.Text = "车速(km/h)";
-            // 
             // SystemMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -876,7 +853,6 @@ namespace CANConnectDemo
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox30;
-        private System.Windows.Forms.TextBox textBox28;
         private HZH_Controls.Controls.UCMeter ucMeter3;
         private HZH_Controls.Controls.UCMeter ucMeter2;
         protected internal HZH_Controls.Controls.UCMeter ucMeterVhicleSpeed;
@@ -941,6 +917,5 @@ namespace CANConnectDemo
         private System.Windows.Forms.Label lblFire;
         private System.Windows.Forms.TextBox tbxFire;
         private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
-        private System.Windows.Forms.Label label22;
     }
 }

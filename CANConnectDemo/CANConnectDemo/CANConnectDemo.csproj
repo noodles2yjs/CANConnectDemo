@@ -51,7 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ChartData.cs" />
+    <Compile Include="Commn\ChartData.cs" />
     <Compile Include="FrmChartDemo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -87,6 +87,7 @@
     <Compile Include="FrmSplash.Designer.cs">
       <DependentUpon>FrmSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Commn\SuperChart.cs" />
     <Compile Include="SystemMonitor.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -11,7 +11,10 @@ namespace CANConnectDemo
     /// </summary>
    public class ChartData
     {
-
+        public ChartData()
+        {
+            
+        }
         public ChartData(string text,double value)
         {
             this.Text = text;

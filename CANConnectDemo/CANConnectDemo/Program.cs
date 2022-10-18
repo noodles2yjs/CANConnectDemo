@@ -15,7 +15,7 @@ namespace CANConnectDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmSplash());
+            Application.Run(new FrmMain());
         }
     }
 }

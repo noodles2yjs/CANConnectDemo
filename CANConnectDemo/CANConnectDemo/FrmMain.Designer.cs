@@ -1,4 +1,6 @@
 ﻿
+using System.Windows.Forms;
+
 namespace CANConnectDemo
 {
     partial class FrmMain
@@ -42,13 +44,11 @@ namespace CANConnectDemo
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatusLabel1 = new System.Windows.Forms.ToolStripStatusLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.菜单1ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.菜单2ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.菜单1ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.菜单2ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+           
             this.menuStrip1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
+            this.panel1.SuspendLayout();
+          
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -56,7 +56,6 @@ namespace CANConnectDemo
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.系统标定ToolStripMenuItem,
             this.系统标定ToolStripMenuItem1,
-            this.toolStripMenuItem1,
             this.menuSysStandard,
             this.程序下载ToolStripMenuItem1});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -110,9 +109,6 @@ namespace CANConnectDemo
             // 
             // menuSysStandard
             // 
-            this.menuSysStandard.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.菜单1ToolStripMenuItem,
-            this.菜单2ToolStripMenuItem});
             this.menuSysStandard.Name = "menuSysStandard";
             this.menuSysStandard.Size = new System.Drawing.Size(83, 21);
             this.menuSysStandard.Text = "程序标定(&S)";
@@ -142,45 +138,14 @@ namespace CANConnectDemo
             // 
             // panel1
             // 
+          
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 25);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1333, 666);
             this.panel1.TabIndex = 4;
             // 
-            // 菜单1ToolStripMenuItem
-            // 
-            this.菜单1ToolStripMenuItem.Name = "菜单1ToolStripMenuItem";
-            this.菜单1ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.菜单1ToolStripMenuItem.Text = "菜单1";
-            // 
-            // 菜单2ToolStripMenuItem
-            // 
-            this.菜单2ToolStripMenuItem.Name = "菜单2ToolStripMenuItem";
-            this.菜单2ToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.菜单2ToolStripMenuItem.Text = "菜单2";
-            // 
-            // toolStripMenuItem1
-            // 
-            this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.菜单1ToolStripMenuItem1});
-            this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(136, 21);
-            this.toolStripMenuItem1.Text = "toolStripMenuItem1";
-            // 
-            // 菜单1ToolStripMenuItem1
-            // 
-            this.菜单1ToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.菜单2ToolStripMenuItem1});
-            this.菜单1ToolStripMenuItem1.Name = "菜单1ToolStripMenuItem1";
-            this.菜单1ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.菜单1ToolStripMenuItem1.Text = "菜单1";
-            // 
-            // 菜单2ToolStripMenuItem1
-            // 
-            this.菜单2ToolStripMenuItem1.Name = "菜单2ToolStripMenuItem1";
-            this.菜单2ToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
-            this.菜单2ToolStripMenuItem1.Text = "菜单2";
+            
             // 
             // FrmMain
             // 
@@ -201,6 +166,8 @@ namespace CANConnectDemo
             this.menuStrip1.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+           
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,10 +187,7 @@ namespace CANConnectDemo
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ToolStripMenuItem 菜单1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem 菜单2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 菜单1ToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem 菜单2ToolStripMenuItem1;
+        
+        
     }
 }

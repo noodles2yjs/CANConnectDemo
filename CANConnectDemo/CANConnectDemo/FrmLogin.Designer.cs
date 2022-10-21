@@ -68,6 +68,7 @@ namespace CANConnectDemo
             this.tbxLogin.Name = "tbxLogin";
             this.tbxLogin.Size = new System.Drawing.Size(198, 29);
             this.tbxLogin.TabIndex = 0;
+            this.tbxLogin.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxLogin_KeyDown);
             // 
             // lblLogPwd
             // 
@@ -85,6 +86,7 @@ namespace CANConnectDemo
             this.tbxLogPwd.Size = new System.Drawing.Size(198, 29);
             this.tbxLogPwd.TabIndex = 1;
             this.tbxLogPwd.UseSystemPasswordChar = true;
+            this.tbxLogPwd.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbxLogPwd_KeyDown);
             // 
             // lblLogUser
             // 

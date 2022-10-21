@@ -373,6 +373,48 @@ namespace CANConnectDemo
             this.ucDataGridView1.RowType = typeof(HZH_Controls.Controls.UCDataGridViewRow);
             this.ucDataGridView1.Size = new System.Drawing.Size(960, 555);
             this.ucDataGridView1.TabIndex = 6;
+
+            // 系统标定TabControl1
+            // 
+            this.系统标定TabControl1.Controls.Add(this.系统标定TabPage01);
+            this.系统标定TabControl1.Controls.Add(this.系统标定TabPage02);
+            this.系统标定TabControl1.Controls.Add(this.系统标定TabPage03);
+            this.系统标定TabControl1.Location = new System.Drawing.Point(16, 16);
+            this.系统标定TabControl1.Name = "系统标定TabControl1";
+            this.系统标定TabControl1.SelectedIndex = 0;
+            this.系统标定TabControl1.Size = new System.Drawing.Size(501, 240);
+            this.系统标定TabControl1.TabIndex = 0;
+            // this.系统标定TabControl1.Visible = false;
+             this.Controls.Add(this.系统标定TabControl1);
+            this.系统标定TabControl1.SuspendLayout();
+            // 
+            // 系统标定TabPage01
+            // 
+            this.系统标定TabControl1 = new System.Windows.Forms.TabControl();
+            this.系统标定TabPage01 = new System.Windows.Forms.TabPage();
+            this.系统标定TabPage02 = new System.Windows.Forms.TabPage();
+            this.系统标定TabPage03 = new System.Windows.Forms.TabPage();
+            this.系统标定TabPage01.Location = new System.Drawing.Point(4, 29);
+            this.系统标定TabPage01.Name = "系统标定TabPage01";
+            this.系统标定TabPage01.Size = new System.Drawing.Size(493, 207);
+            this.系统标定TabPage01.TabIndex = 0;
+            this.系统标定TabPage01.Text = "基本助力表";
+            // 
+            // 系统标定TabPage02
+            // 
+            this.系统标定TabPage02.Location = new System.Drawing.Point(4, 29);
+            this.系统标定TabPage02.Name = "系统标定TabPage02";
+            this.系统标定TabPage02.Size = new System.Drawing.Size(256, 207);
+            this.系统标定TabPage02.TabIndex = 1;
+            this.系统标定TabPage02.Text = "基本标定变量";
+            // 
+            // 系统标定TabPage03
+            // 
+            this.系统标定TabPage03.Location = new System.Drawing.Point(4, 29);
+            this.系统标定TabPage03.Name = "系统标定TabPage03";
+            this.系统标定TabPage03.Size = new System.Drawing.Size(256, 207);
+            this.系统标定TabPage03.TabIndex = 2;
+            this.系统标定TabPage03.Text = "PID及温度保护";
             // 
             // SystemStandard
             // 
@@ -401,6 +443,7 @@ namespace CANConnectDemo
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
+            this.系统标定TabControl1.ResumeLayout(false);
             this.PerformLayout();
 
         }
@@ -436,5 +479,18 @@ namespace CANConnectDemo
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Panel panel1;
         private HZH_Controls.Controls.UCDataGridView ucDataGridView1;
+
+        private System.Windows.Forms.TabControl 系统标定TabControl1;
+        private System.Windows.Forms.TabPage 系统标定TabPage01;
+        private System.Windows.Forms.TabPage 系统标定TabPage02;
+        private System.Windows.Forms.TabPage 系统标定TabPage03;
+        //private System.Windows.Forms.TabPage 系统标定TabPage04;
+        //private System.Windows.Forms.TabPage 系统标定TabPage05;
+        //private System.Windows.Forms.TabPage 系统标定TabPage06;
+        //private System.Windows.Forms.TabPage 系统标定TabPage07;
+        //private System.Windows.Forms.TabPage 系统标定TabPage08;
+        //private System.Windows.Forms.TabPage 系统标定TabPage09;
+        //private System.Windows.Forms.TabPage 系统标定TabPage10;
+        //private System.Windows.Forms.TabPage 系统标定TabPage11;
     }
 }

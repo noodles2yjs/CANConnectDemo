@@ -74,5 +74,22 @@ namespace CANConnectDemo
         {
             Application.Exit();
         }
+
+        private void tbxLogin_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                tbxLogPwd.Focus();
+                tbxLogPwd.SelectAll();
+            }
+        }
+
+        private void tbxLogPwd_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                btnLogIn_Click(null,null);
+            }
+        }
     }
 }

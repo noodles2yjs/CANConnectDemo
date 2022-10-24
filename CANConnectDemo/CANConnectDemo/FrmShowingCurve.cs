@@ -17,22 +17,39 @@ namespace CANConnectDemo
         {
             InitializeComponent();
             // 初始化自定义Chart对象
-            superChart =new SuperChart(this.chart1);
+            superChart1 =new SuperChart(this.chart1);
+            superChart2 =new SuperChart(this.chart1);
+            superChart3 =new SuperChart(this.chart1);
             Init();
-            this.superChart.ShowChart(SeriesChartType.Line, dataList);
+            this.superChart1.ShowChart(SeriesChartType.Line, dataList1);
+            this.superChart2.ShowChart(SeriesChartType.Line, dataList2);
+            this.superChart3.ShowChart(SeriesChartType.Line, dataList3);
 
         }
-        private List<ChartData> dataList = new List<ChartData>();//用来保存数据的集合
-        private SuperChart superChart = null;
+        private SuperChart superChart1 = null;
+        private SuperChart superChart2 = null;
+        private SuperChart superChart3 = null;
+        private List<ChartData> dataList1 = new List<ChartData>();//用来保存数据的集合
+        private List<ChartData> dataList2 = new List<ChartData>();//用来保存数据的集合
+        private List<ChartData> dataList3 = new List<ChartData>();//用来保存数据的集合
         private void Init()
         {
             //创建一个随机数用来生成数据
-            Random random = new Random();
-            dataList.Add(new ChartData("北京", random.Next(100)));
-            dataList.Add(new ChartData("上海", random.Next(100)));
-            dataList.Add(new ChartData("天津", random.Next(100)));
-            dataList.Add(new ChartData("深圳", random.Next(100)));
-            dataList.Add(new ChartData("南京", random.Next(100)));
+            
+            //Random random = new Random();
+            //dataList1.Add(new ChartData("北京", random.Next(100)));
+            //dataList1.Add(new ChartData("上海", random.Next(100)));
+            //dataList1.Add(new ChartData("天津", random.Next(100)));
+            //dataList1.Add(new ChartData("深圳", random.Next(100)));
+            //dataList1.Add(new ChartData("南京", random.Next(100)));
+
+            /// 将dataGridView2的数据显示在图表里
+          dataList1.Add(
+              new ChartData()
+              
+              );
+
+
         }
     }
 }

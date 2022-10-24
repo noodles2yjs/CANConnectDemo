@@ -42,7 +42,7 @@ namespace CANConnectDemo
 
         private void 系统标定ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            ClosePreForm();
+           
             OpenForm(new SystemMonitor());
         }
 
@@ -61,6 +61,7 @@ namespace CANConnectDemo
 
         private void OpenForm(Form newForm)
         {
+            ClosePreForm();
             newForm.TopLevel = false; // 将子窗体设置成非顶级控件
             newForm.WindowState = FormWindowState.Maximized;
             newForm.FormBorderStyle = FormBorderStyle.None;
@@ -70,7 +71,7 @@ namespace CANConnectDemo
 
         private void menuSysStandard_Click(object sender, EventArgs e)
         {
-            ClosePreForm();
+           
             OpenForm(new SystemStandard2());
             
             //ClosePreForm();

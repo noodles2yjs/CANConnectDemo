@@ -110,12 +110,6 @@
     <Compile Include="SystemStandard.Designer.cs">
       <DependentUpon>SystemStandard.cs</DependentUpon>
     </Compile>
-    <Compile Include="SystemStandard2.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SystemStandard2.Designer.cs">
-      <DependentUpon>SystemStandard2.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="FrmChartDemo.resx">
       <DependentUpon>FrmChartDemo.cs</DependentUpon>
     </EmbeddedResource>
@@ -150,9 +144,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SystemStandard.resx">
       <DependentUpon>SystemStandard.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="SystemStandard2.resx">
-      <DependentUpon>SystemStandard2.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="app.config" />
     <None Include="packages.config" />

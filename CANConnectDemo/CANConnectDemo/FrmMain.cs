@@ -72,7 +72,7 @@ namespace CANConnectDemo
         private void menuSysStandard_Click(object sender, EventArgs e)
         {
            
-            OpenForm(new SystemStandard2());
+            OpenForm(new SystemStandard());
             
             //ClosePreForm();
             //OpenForm(new SystemStandard());

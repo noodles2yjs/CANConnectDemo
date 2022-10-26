@@ -11,9 +11,9 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CANConnectDemo
 {
-    public partial class FrmShowingCurve : Form
+    public partial class FrmShowCurve : Form
     {
-        public FrmShowingCurve()
+        public FrmShowCurve()
         {
             InitializeComponent();
             // 初始化自定义Chart对象

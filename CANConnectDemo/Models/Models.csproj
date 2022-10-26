@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="StandardBasicHelpTableModel.cs" />
     <Compile Include="StandardPIDModel.cs" />
+    <Compile Include="StandardTempProtectionModel.cs" />
     <Compile Include="SysAdmin.cs" />
     <Compile Include="LogUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

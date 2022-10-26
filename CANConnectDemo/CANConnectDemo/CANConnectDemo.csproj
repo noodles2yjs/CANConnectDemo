@@ -76,17 +76,17 @@
     <Compile Include="FrmMain.Designer.cs">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmShowCurve2.cs">
+    <Compile Include="FrmShowCurveBHT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmShowCurve2.Designer.cs">
-      <DependentUpon>FrmShowCurve2.cs</DependentUpon>
+    <Compile Include="FrmShowCurveBHT.Designer.cs">
+      <DependentUpon>FrmShowCurveBHT.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmShowingCurve.cs">
+    <Compile Include="FrmShowCurve.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmShowingCurve.Designer.cs">
-      <DependentUpon>FrmShowingCurve.cs</DependentUpon>
+    <Compile Include="FrmShowCurve.Designer.cs">
+      <DependentUpon>FrmShowCurve.cs</DependentUpon>
     </Compile>
     <Compile Include="Commn\Helper.cs" />
     <Compile Include="Program.cs" />
@@ -120,11 +120,11 @@
     <EmbeddedResource Include="FrmMain.resx">
       <DependentUpon>FrmMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmShowCurve2.resx">
-      <DependentUpon>FrmShowCurve2.cs</DependentUpon>
+    <EmbeddedResource Include="FrmShowCurveBHT.resx">
+      <DependentUpon>FrmShowCurveBHT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmShowingCurve.resx">
-      <DependentUpon>FrmShowingCurve.cs</DependentUpon>
+    <EmbeddedResource Include="FrmShowCurve.resx">
+      <DependentUpon>FrmShowCurve.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -148,7 +148,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Models.LogUser.datasource" />
+    <None Include="Properties\DataSources\Models.StandardBasicHelpTableModel.datasource" />
     <None Include="Properties\DataSources\Models.StandardPIDModel.datasource" />
+    <None Include="Properties\DataSources\Models.StandardTempProtectionModel.datasource" />
     <None Include="Properties\DataSources\Models.SysAdmin.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

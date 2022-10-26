@@ -17,10 +17,14 @@ namespace CANConnectDemo
         public SystemStandard()
         {
             InitializeComponent();
-            InitDataGridView();
+            // InitDataGridView();
+            InitDgvBHT(this.dataGridViewBHT);
         }
 
-        private void InitDataGridView()
+        /// <summary>
+        /// 一行一行添加 使用 dataGridViewBHT.Rows.Add() 添加
+        /// </summary>
+    /*    private void InitDataGridView()
         {
             // 原始一个个添加
             int n = 1000;
@@ -28,22 +32,22 @@ namespace CANConnectDemo
             {
                 n += 1;
                 var random = new Random();
-                int index = this.dataGridView1.Rows.Add(); // 向集合添加新行,返回新行的索引
+                int index = this.dataGridViewBHT.Rows.Add(); // 向集合添加新行,返回新行的索引
                 for (int j = 0; j < 13; j++)
                 {
                     if (j == 0)
                     {
 
-                        this.dataGridView1.Rows[index].Cells[j].Value = n;
+                        this.dataGridViewBHT.Rows[index].Cells[j].Value = n;
 
                     }
-                    this.dataGridView1.Rows[index].Cells[j].Value = random.NextDouble();
+                    this.dataGridViewBHT.Rows[index].Cells[j].Value = random.NextDouble();
                 }
 
             }
 
             // 通过对象添加
-            /*    {
+            *//*    {
                     var standardPidModels = new List<StandardPIDModel>();
 
                     int n = 1000;
@@ -73,45 +77,49 @@ namespace CANConnectDemo
                     }
 
                     this.dataGridView1.DataSource = standardPidModels;
-                }*/
+                }*//*
         }
-
+*/
        
-        private void InitializeDataGridView( DataGridView dataGridView)
+        private void InitDgvBHT( DataGridView dataGridView)
         {
             //dataGridView2.AutoGenerateColumns = true;
-            var standardPidModels = new List<StandardPIDModel>();
+            var StandardBasicHelpTableModels = new List<StandardBasicHelpTableModel>();
             //这个就是 通过随机数,添加到对象,对象绑定
             int n = 1000; 
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 3; i++)
             {
                 n += 1;
-                int seekSeek = unchecked((int)DateTime.Now.Ticks);
-                var random = new Random(seekSeek);
-                var standardPidModel = new StandardPIDModel
+               // int seekSeek = unchecked((int)DateTime.Now.Ticks); // 随机种子 这个不太靠谱
+                //string guid = System.Guid.NewGuid().ToString();
+                // 使用Guid作为随机种子
+                var guid = Guid.NewGuid().ToString();
+                var random = new Random(guid.GetHashCode());
+                var StandardPIDModel = new StandardBasicHelpTableModel
                 {
-                    DZ = random.NextDouble(),
                     Id = n,
-                    KD = random.NextDouble(),
-                    KI = random.NextDouble(),
-                    KP = random.NextDouble(),
-                    Max = random.NextDouble(),
-                    PCI = random.NextDouble(),
-                    PCJ = random.NextDouble(),
-                    PFI = random.NextDouble(),
-                    PCK = random.NextDouble(),
-                    PFJ = random.NextDouble(),
-                    PFK = random.NextDouble(),
-                    VhicleSpeed = random.NextDouble(),
+                   VehicleSpeed = random.NextDouble(),
+                   Prop00 = random.NextDouble(),
+                   Prop05 = random.NextDouble(),
+                   Prop10 = random.NextDouble(),
+                   Prop20 = random.NextDouble(),
+                   Prop30 = random.NextDouble(),
+                   Prop40 = random.NextDouble(),
+                   Prop50 = random.NextDouble(),
+                   Prop60 = random.NextDouble(),
+                   Prop70 = random.NextDouble(),
+                   Prop80 = random.NextDouble(),
+                   Prop90 = random.NextDouble(),
+                   Prop100 = random.NextDouble(),
 
                 };
 
-                standardPidModels.Add(standardPidModel);
+                StandardBasicHelpTableModels.Add(StandardPIDModel);
             }
 
 
             //bindingSource1.DataSource = standardPidModels;
-            dataGridView.DataSource = standardPidModels;
+            dataGridView.DataSource = StandardBasicHelpTableModels;
         }
 
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
@@ -119,16 +127,16 @@ namespace CANConnectDemo
 
             if (tabControl1.SelectedTab == tabPage2)
             {
-                InitializeDataGridView(this.dataGridView2);
+               // InitializeDataGridView(this.dataGridView2);
             }
             if (tabControl1.SelectedTab == tabPID )
             {
-                InitializeDataGridView(this.dataGridView3);
+                //InitializeDataGridView(this.dataGridView3);
             }
         }
 
         /// <summary>
-        /// 显示曲线
+        /// 显示BHT曲线
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -142,15 +150,15 @@ namespace CANConnectDemo
             List<DataGridViewRow> gdrs = new List<DataGridViewRow>();
 
              List<string> cols=new List<string>();
-          for (int i = 0; i < dataGridView2.Columns.Count; i++)
+          for (int i = 0; i < this.dataGridViewBHT.Columns.Count; i++)
           {
-              cols.Add(dataGridView2.Columns[i].HeaderText);
+              cols.Add(this.dataGridViewBHT.Columns[i].HeaderText);
           }
-          for (int i = 0; i < dataGridView2.Rows.Count; i++)
+          for (int i = 0; i < this.dataGridViewBHT.Rows.Count; i++)
           {
-              gdrs.Add(dataGridView2.Rows[i]);
+              gdrs.Add(this.dataGridViewBHT.Rows[i]);
           }
-            new FrmShowCurve2(gdrs,cols).Show();
+            new FrmShowCurveBHT(gdrs,cols).Show();
         }
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
@@ -165,6 +173,13 @@ namespace CANConnectDemo
 
         private void SystemStandard2_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewBHT.DataSource = null;
+            InitDgvBHT(this.dataGridViewBHT);
 
         }
     }

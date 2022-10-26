@@ -1,7 +1,7 @@
 ﻿
 namespace CANConnectDemo
 {
-    partial class FrmShowCurve2
+    partial class FrmShowCurveBHT
     {
         /// <summary>
         /// Required designer variable.

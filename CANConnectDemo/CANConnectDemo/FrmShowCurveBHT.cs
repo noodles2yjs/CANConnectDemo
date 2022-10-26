@@ -12,13 +12,13 @@ using System.Windows.Forms.DataVisualization.Charting;
 
 namespace CANConnectDemo
 {
-    public partial class FrmShowCurve2 : Form
+    public partial class FrmShowCurveBHT : Form
     {
 
 
         List<DataGridViewRow>datas=   new List<DataGridViewRow>();
         List<string> cols=new  List<string>();
-        public FrmShowCurve2(List<DataGridViewRow> data, List<string> data1)
+        public FrmShowCurveBHT(List<DataGridViewRow> data, List<string> data1)
         {
             datas = data;
             cols = data1;
@@ -33,7 +33,7 @@ namespace CANConnectDemo
         {
 
             // set up chart
-            var colors = new List<Color> { Color.Green, Color.Red, Color.Black };
+          
             chart1.Series.Clear();
 
             // var systemStandard2 = (SystemStandard2)owner;
@@ -42,7 +42,7 @@ namespace CANConnectDemo
             {
                 var series = chart1.Series.Add("series" + i);
                 series.ChartType = SeriesChartType.Line;
-                series.Color = colors[i - 1];
+                
             }
 
             // fill in all the values from the dgv to chart 
@@ -53,7 +53,7 @@ namespace CANConnectDemo
                // chart1.ChartAreas[0].AxisX.;
                 for (int j = 1; j < cols.Count; j++)
                 {
-                    Console.WriteLine(datas[i].Cells[j].Value);
+                   //  Console.WriteLine(datas[i].Cells[j].Value);
                     chart1.Series[i].Points.AddXY(cols[j], double.Parse(datas[i].Cells[j].Value.ToString()));
                 }
             }

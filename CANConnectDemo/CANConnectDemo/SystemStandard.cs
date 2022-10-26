@@ -122,17 +122,109 @@ namespace CANConnectDemo
             dataGridView.DataSource = StandardBasicHelpTableModels;
         }
 
+        private void InitDgvPID(DataGridView dataGridView)
+        {
+            //dataGridView2.AutoGenerateColumns = true;
+            var StandardPIDModels = new List<StandardPIDModel>();
+            //这个就是 通过随机数,添加到对象,对象绑定
+            int n = 1000;
+            for (int i = 0; i < 3; i++)
+            {
+                n += 1;
+                // int seekSeek = unchecked((int)DateTime.Now.Ticks); // 随机种子 这个不太靠谱
+                //string guid = System.Guid.NewGuid().ToString();
+                // 使用Guid作为随机种子
+                var guid = Guid.NewGuid().ToString();
+                var random = new Random(guid.GetHashCode());
+                var StandardPIDModel = new StandardPIDModel
+                {
+                    Id = n,
+                    VhicleSpeed = random.NextDouble(),
+                    KP = random.NextDouble(),
+                    KI = random.NextDouble(),
+                    KD = random.NextDouble(),
+                    DZ = random.NextDouble(),
+                    Max = random.NextDouble(),
+                    PCJ = random.NextDouble(),
+                    PCK = random.NextDouble(),
+                    PCI = random.NextDouble(),
+                    PFJ = random.NextDouble(),
+                    PFK = random.NextDouble(),
+                    PFI = random.NextDouble(),
+
+                };
+
+                StandardPIDModels.Add(StandardPIDModel);
+            }
+
+
+            //bindingSource1.DataSource = standardPidModels;
+            dataGridView.DataSource = StandardPIDModels;
+        }
+        private void InitDgvTempProtection(DataGridView dataGridView)
+        {
+            //dataGridView2.AutoGenerateColumns = true;
+            var StandardTempProtectionModels = new List<StandardTempProtectionModel>();
+            //这个就是 通过随机数,添加到对象,对象绑定
+            int n = 1000;
+            for (int i = 0; i < 3; i++)
+            {
+                n += 1;
+                // int seekSeek = unchecked((int)DateTime.Now.Ticks); // 随机种子 这个不太靠谱
+                //string guid = System.Guid.NewGuid().ToString();
+                // 使用Guid作为随机种子
+                var guid = Guid.NewGuid().ToString();
+                var random = new Random(guid.GetHashCode());
+                var StandardTempProtectionModel = new StandardTempProtectionModel
+                {
+                    Id = n,
+                    CutInTemp = random.NextDouble(),
+                    CutInTime = random.NextDouble(),
+                    Slope = random.NextDouble(),
+                    WeakeningRatio = random.NextDouble(),
+                    RecoverTime1 = random.NextDouble(),
+                    RecoverTime2 = random.NextDouble(),
+                    RecoverTemp = random.NextDouble(),
+                };
+
+                StandardTempProtectionModels.Add(StandardTempProtectionModel);
+            }
+
+
+            //bindingSource1.DataSource = standardPidModels;
+            dataGridView.DataSource = StandardTempProtectionModels;
+        }
+
         private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            if (tabControl1.SelectedTab == tabPage2)
-            {
-               // InitializeDataGridView(this.dataGridView2);
-            }
             if (tabControl1.SelectedTab == tabPID )
             {
-                //InitializeDataGridView(this.dataGridView3);
+                InitDgvPID(this.dataGridViewPID);
+                InitDgvTempProtection(this.dataGridViewTempProtection);
             }
+        }
+
+       
+        /// <summary>
+        /// 刷新BHP的数据
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnReload_Click(object sender, EventArgs e)
+        {
+            this.dataGridViewBHT.DataSource = null;
+            InitDgvBHT(this.dataGridViewBHT);
+
+        }
+
+        /// <summary>
+        /// 刷新数据
+        /// </summary>
+        /// <param name="dataGridView"></param>
+        private void ReloadData(DataGridView  dataGridView) // 这里需要传一个委托
+        {
+            dataGridView.DataSource = null;
         }
 
         /// <summary>
@@ -140,47 +232,20 @@ namespace CANConnectDemo
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btnShowCurve_Click(object sender, EventArgs e)
+        private void btnShowBHPCurve_Click(object sender, EventArgs e)
         {
-            //var frmShowCurve2 = new FrmShowCurve2 {Owner = this};
-            //frmShowCurve2.Show();
-            // new FrmShowCurve2().Show(this); 另一个窗口无法获取到 放弃
-            // var systemS= new SystemStandard2();
-            // systemStandard2 = this;
             List<DataGridViewRow> gdrs = new List<DataGridViewRow>();
 
-             List<string> cols=new List<string>();
-          for (int i = 0; i < this.dataGridViewBHT.Columns.Count; i++)
-          {
-              cols.Add(this.dataGridViewBHT.Columns[i].HeaderText);
-          }
-          for (int i = 0; i < this.dataGridViewBHT.Rows.Count; i++)
-          {
-              gdrs.Add(this.dataGridViewBHT.Rows[i]);
-          }
-            new FrmShowCurveBHT(gdrs,cols).Show();
-        }
-
-        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void SystemStandard2_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnReload_Click(object sender, EventArgs e)
-        {
-            this.dataGridViewBHT.DataSource = null;
-            InitDgvBHT(this.dataGridViewBHT);
-
+            List<string> cols = new List<string>();
+            for (int i = 0; i < this.dataGridViewBHT.Columns.Count; i++)
+            {
+                cols.Add(this.dataGridViewBHT.Columns[i].HeaderText);
+            }
+            for (int i = 0; i < this.dataGridViewBHT.Rows.Count; i++)
+            {
+                gdrs.Add(this.dataGridViewBHT.Rows[i]);
+            }
+            new FrmShowCurveBHT(gdrs, cols).Show();
         }
     }
 }

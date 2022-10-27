@@ -89,6 +89,12 @@
       <DependentUpon>FrmShowCurve.cs</DependentUpon>
     </Compile>
     <Compile Include="Commn\Helper.cs" />
+    <Compile Include="FrmShowCurveTempProtection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowCurveTempProtection.Designer.cs">
+      <DependentUpon>FrmShowCurveTempProtection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="FrmSplash.cs">
@@ -98,6 +104,12 @@
       <DependentUpon>FrmSplash.cs</DependentUpon>
     </Compile>
     <Compile Include="Commn\SuperChart.cs" />
+    <Compile Include="FrmShowCurvePId.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShowCurvePId.Designer.cs">
+      <DependentUpon>FrmShowCurvePId.cs</DependentUpon>
+    </Compile>
     <Compile Include="SystemMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +138,9 @@
     <EmbeddedResource Include="FrmShowCurve.resx">
       <DependentUpon>FrmShowCurve.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowCurveTempProtection.resx">
+      <DependentUpon>FrmShowCurveTempProtection.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -138,6 +153,9 @@
     </Compile>
     <EmbeddedResource Include="FrmSplash.resx">
       <DependentUpon>FrmSplash.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShowCurvePId.resx">
+      <DependentUpon>FrmShowCurvePId.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SystemMonitor.resx">
       <DependentUpon>SystemMonitor.cs</DependentUpon>

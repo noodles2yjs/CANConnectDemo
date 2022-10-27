@@ -36,8 +36,6 @@ namespace CANConnectDemo
           
             chart1.Series.Clear();
 
-            // var systemStandard2 = (SystemStandard2)owner;
-            // DataGridView dataGridView2 = _systemStandard2.dataGridView2;// 我需要这了有数据,不是null 这里获取不到数据,我无法初始化数据,
             for (int i = 1; i <= datas.Count; i++)
             {
                 var series = chart1.Series.Add("series" + i);
@@ -57,29 +55,7 @@ namespace CANConnectDemo
                     chart1.Series[i].Points.AddXY(cols[j], double.Parse(datas[i].Cells[j].Value.ToString()));
                 }
             }
-            /*var owner = this.Owner;
-            if (owner == null)
-            {ying
-                //var systemStandard2 = (SystemStandard2) owner;
-                DataGridView dataGridView2 = _systemStandard2.dataGridView2;
-                for (int i = 1; i <= dataGridView2.Rows.Count; i++)
-                {
-                    var series = chart1.Series.Add("series" + i);
-                    series.ChartType = SeriesChartType.Line;
-                    series.Color = colors[i - 1];
-                }
            
-                // fill in all the values from the dgv to chart 
-
-                for (int i = 0; i < dataGridView2.Rows.Count; i++)
-                {
-                    for (int j = 1; j < dataGridView2.ColumnCount; j++)
-                    {
-                        chart1.Series[i].Points.AddXY(dataGridView2.Columns[j].HeaderText, dataGridView2[i, j]);
-                    }
-
-                }
-            }*/
         }
        
 

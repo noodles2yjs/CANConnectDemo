@@ -247,5 +247,60 @@ namespace CANConnectDemo
             }
             new FrmShowCurveBHT(gdrs, cols).Show();
         }
+
+        /// <summary>
+        /// 显示PId曲线
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnShowPID_Click(object sender, EventArgs e)
+        {
+
+            List<DataGridViewRow> gdrs = new List<DataGridViewRow>();
+
+            List<string> cols = new List<string>();
+            for (int i = 0; i < this.dataGridViewPID.Columns.Count; i++)
+            {
+                cols.Add(this.dataGridViewPID.Columns[i].HeaderText);
+            }
+            for (int i = 0; i < this.dataGridViewBHT.Rows.Count; i++)
+            {
+                gdrs.Add(this.dataGridViewPID.Rows[i]);
+            }
+            new FrmShowCurvePId(gdrs, cols).Show();
+        }
+
+        /// <summary>
+        /// 显示温度保护曲线
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnShowTempProtection_Click(object sender, EventArgs e)
+        {
+            List<DataGridViewRow> gdrs = new List<DataGridViewRow>();
+
+            List<string> cols = new List<string>();
+            for (int i = 0; i < this.dataGridViewTempProtection.Columns.Count; i++)
+            {
+                cols.Add(this.dataGridViewTempProtection.Columns[i].HeaderText);
+            }
+            for (int i = 0; i < this.dataGridViewTempProtection.Rows.Count; i++)
+            {
+                gdrs.Add(this.dataGridViewTempProtection.Rows[i]);
+            }
+            new FrmShowCurveTempProtection(gdrs,cols).Show();
+        }
+
+        private void btnPIdReload_Click(object sender, EventArgs e)
+        {
+            ReloadData(this.dataGridViewPID);
+            InitDgvPID(this.dataGridViewPID);
+        }
+
+        private void btnReloadTempProtection_Click(object sender, EventArgs e)
+        {
+            ReloadData(this.dataGridViewTempProtection);
+            InitDgvTempProtection(this.dataGridViewTempProtection);
+        }
     }
 }

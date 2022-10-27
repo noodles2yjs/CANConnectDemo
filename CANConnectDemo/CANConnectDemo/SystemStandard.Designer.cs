@@ -35,7 +35,9 @@ namespace CANConnectDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnShowBHPCurve = new System.Windows.Forms.Button();
             this.tabPID = new System.Windows.Forms.TabPage();
+            this.btnReloadTempProtection = new System.Windows.Forms.Button();
             this.btnShowTempProtection = new System.Windows.Forms.Button();
+            this.btnPIdReload = new System.Windows.Forms.Button();
             this.btnShowPID = new System.Windows.Forms.Button();
             this.textBox32 = new System.Windows.Forms.TextBox();
             this.textBox33 = new System.Windows.Forms.TextBox();
@@ -184,8 +186,6 @@ namespace CANConnectDemo
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.btnPIdReload = new System.Windows.Forms.Button();
-            this.btnReloadTempProtection = new System.Windows.Forms.Button();
             this.tabPID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTempProtection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standardTempProtectionModelBindingSource)).BeginInit();
@@ -241,6 +241,16 @@ namespace CANConnectDemo
             this.tabPID.Text = "PID及温度保护";
             this.tabPID.UseVisualStyleBackColor = true;
             // 
+            // btnReloadTempProtection
+            // 
+            this.btnReloadTempProtection.Location = new System.Drawing.Point(896, 450);
+            this.btnReloadTempProtection.Name = "btnReloadTempProtection";
+            this.btnReloadTempProtection.Size = new System.Drawing.Size(147, 23);
+            this.btnReloadTempProtection.TabIndex = 12;
+            this.btnReloadTempProtection.Text = "Reload";
+            this.btnReloadTempProtection.UseVisualStyleBackColor = true;
+            this.btnReloadTempProtection.Click += new System.EventHandler(this.btnReloadTempProtection_Click);
+            // 
             // btnShowTempProtection
             // 
             this.btnShowTempProtection.Location = new System.Drawing.Point(896, 406);
@@ -249,6 +259,17 @@ namespace CANConnectDemo
             this.btnShowTempProtection.TabIndex = 12;
             this.btnShowTempProtection.Text = "显示温度保护曲线";
             this.btnShowTempProtection.UseVisualStyleBackColor = true;
+            this.btnShowTempProtection.Click += new System.EventHandler(this.btnShowTempProtection_Click);
+            // 
+            // btnPIdReload
+            // 
+            this.btnPIdReload.Location = new System.Drawing.Point(892, 116);
+            this.btnPIdReload.Name = "btnPIdReload";
+            this.btnPIdReload.Size = new System.Drawing.Size(147, 23);
+            this.btnPIdReload.TabIndex = 12;
+            this.btnPIdReload.Text = "Reload";
+            this.btnPIdReload.UseVisualStyleBackColor = true;
+            this.btnPIdReload.Click += new System.EventHandler(this.btnPIdReload_Click);
             // 
             // btnShowPID
             // 
@@ -258,6 +279,7 @@ namespace CANConnectDemo
             this.btnShowPID.TabIndex = 12;
             this.btnShowPID.Text = "显示PID曲线";
             this.btnShowPID.UseVisualStyleBackColor = true;
+            this.btnShowPID.Click += new System.EventHandler(this.btnShowPID_Click);
             // 
             // textBox32
             // 
@@ -1669,24 +1691,6 @@ namespace CANConnectDemo
             this.button12.TabIndex = 1;
             this.button12.Text = "导出参数";
             this.button12.UseVisualStyleBackColor = false;
-            // 
-            // btnPIdReload
-            // 
-            this.btnPIdReload.Location = new System.Drawing.Point(892, 116);
-            this.btnPIdReload.Name = "btnPIdReload";
-            this.btnPIdReload.Size = new System.Drawing.Size(147, 23);
-            this.btnPIdReload.TabIndex = 12;
-            this.btnPIdReload.Text = "Reload";
-            this.btnPIdReload.UseVisualStyleBackColor = true;
-            // 
-            // btnReloadTempProtection
-            // 
-            this.btnReloadTempProtection.Location = new System.Drawing.Point(896, 450);
-            this.btnReloadTempProtection.Name = "btnReloadTempProtection";
-            this.btnReloadTempProtection.Size = new System.Drawing.Size(147, 23);
-            this.btnReloadTempProtection.TabIndex = 12;
-            this.btnReloadTempProtection.Text = "Reload";
-            this.btnReloadTempProtection.UseVisualStyleBackColor = true;
             // 
             // SystemStandard
             // 

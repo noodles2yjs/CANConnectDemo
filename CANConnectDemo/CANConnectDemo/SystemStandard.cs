@@ -21,66 +21,8 @@ namespace CANConnectDemo
             InitDgvBHT(this.dataGridViewBHT);
         }
 
-        /// <summary>
-        /// 一行一行添加 使用 dataGridViewBHT.Rows.Add() 添加
-        /// </summary>
-    /*    private void InitDataGridView()
-        {
-            // 原始一个个添加
-            int n = 1000;
-            for (int i = 0; i < 13; i++)
-            {
-                n += 1;
-                var random = new Random();
-                int index = this.dataGridViewBHT.Rows.Add(); // 向集合添加新行,返回新行的索引
-                for (int j = 0; j < 13; j++)
-                {
-                    if (j == 0)
-                    {
-
-                        this.dataGridViewBHT.Rows[index].Cells[j].Value = n;
-
-                    }
-                    this.dataGridViewBHT.Rows[index].Cells[j].Value = random.NextDouble();
-                }
-
-            }
-
-            // 通过对象添加
-            *//*    {
-                    var standardPidModels = new List<StandardPIDModel>();
-
-                    int n = 1000;
-                    for (int i = 0; i < 10; i++)
-                    {
-                        n += 1;
-                        var random = new Random();
-                        var standardPidModel = new StandardPIDModel
-                        {
-                            DZ = random.NextDouble(),
-                            Id = n,
-                            KD = random.NextDouble(),
-                            KI = random.NextDouble(),
-                            KP = random.NextDouble(),
-                            Max = random.NextDouble(),
-                            PCI = random.NextDouble(),
-                            PCJ = random.NextDouble(),
-                            PFI = random.NextDouble(),
-                            PCK = random.NextDouble(),
-                            PFJ = random.NextDouble(),
-                            PFK = random.NextDouble(),
-                            VhicleSpeed = random.NextDouble(),
-
-                        };
-
-                        standardPidModels.Add(standardPidModel);
-                    }
-
-                    this.dataGridView1.DataSource = standardPidModels;
-                }*//*
-        }
-*/
        
+
         private void InitDgvBHT( DataGridView dataGridView)
         {
             //dataGridView2.AutoGenerateColumns = true;
@@ -301,6 +243,89 @@ namespace CANConnectDemo
         {
             ReloadData(this.dataGridViewTempProtection);
             InitDgvTempProtection(this.dataGridViewTempProtection);
+        }
+
+        #region 从Excel中复制粘贴到Datagirdview
+
+        //private void dataGridView1_KeyPress_1(object sender, KeyPressEventArgs e)
+        //{
+        //    if (e.KeyChar == 22)
+        //    {
+        //        PasteData();
+        //    }
+        //}
+
+        private void PasteData()
+        {
+            string clipboardText = Clipboard.GetText(); //获取剪贴板中的内容
+            if (string.IsNullOrEmpty(clipboardText))
+            {
+                return;
+            }
+            int colnum = 0;
+            int rownum = 0;
+            for (int i = 0; i < clipboardText.Length; i++)
+            {
+                if (clipboardText.Substring(i, 1) == "\t")
+                {
+                    colnum++;
+                }
+                if (clipboardText.Substring(i, 1) == "\n")
+                {
+                    rownum++;
+                }
+            }
+            colnum = colnum / rownum + 1;
+            int selectedRowIndex, selectedColIndex;
+            selectedRowIndex = this.dataGridViewBHT.CurrentRow.Index;
+            selectedColIndex = this.dataGridViewBHT.CurrentCell.ColumnIndex;
+            if (selectedRowIndex + rownum > dataGridViewBHT.RowCount || selectedColIndex + colnum > dataGridViewBHT.ColumnCount)
+            {
+                MessageBox.Show("粘贴区域大小不一致","提示信息");
+                return;
+            }
+            String[][] temp = new String[rownum][];
+            for (int i = 0; i < rownum; i++)
+            {
+                temp[i] = new String[colnum];
+            }
+            int m = 0, n = 0, len = 0;
+            while (len != clipboardText.Length)
+            {
+                String str = clipboardText.Substring(len, 1);
+                if (str == "\t")
+                {
+                    n++;
+                }
+                else if (str == "\n")
+                {
+                    m++;
+                    n = 0;
+                }
+                else
+                {
+                    temp[m][n] += str;
+                }
+                len++;
+            }
+            for (int i = selectedRowIndex; i < selectedRowIndex + rownum; i++)
+            {
+                for (int j = selectedColIndex; j < selectedColIndex + colnum; j++)
+                {
+                    this.dataGridViewBHT.Rows[i].Cells[j].Value = temp[i - selectedRowIndex][j - selectedColIndex];
+                }
+            }
+        }
+
+
+        #endregion
+
+        private void dataGridViewBHT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 22)
+            {
+                PasteData();
+            }
         }
     }
 }

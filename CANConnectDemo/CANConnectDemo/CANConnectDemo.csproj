@@ -51,9 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="Commn\ChartData.cs" />
     <Compile Include="Commn\SuperChart2.cs" />
     <Compile Include="FrmChartDemo.cs">

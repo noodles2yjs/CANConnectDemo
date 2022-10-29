@@ -7,6 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Office.Interop.Excel;
+using Application = System.Windows.Forms.Application;
+using Rectangle = System.Drawing.Rectangle;
+using TextBox = System.Windows.Forms.TextBox;
 
 namespace LearningDemo
 {
@@ -15,6 +19,7 @@ namespace LearningDemo
         public CS_DataGridView_Save()
         {
             InitializeComponent();
+            dataGridView1.ClearSelection();
         }
 
         private void button6Edit_Click(object sender, EventArgs e)
@@ -65,6 +70,7 @@ namespace LearningDemo
         {
             this.dataGridView1.Rows.Add(textBox1StudentId.Text, textBox3FirstName.Text, textBox5SurName.Text,
                 textBox2Address.Text, textBox4DOB.Text, textBox6Tel.Text);
+            dataGridView1.ClearSelection();
         }
 
         private void iDelete()
@@ -112,13 +118,52 @@ namespace LearningDemo
             iReset();
         }
 
+        private Bitmap bitmap;
         private void button3Print_Click(object sender, EventArgs e)
         {
+            var height = dataGridView1.Height;
+            dataGridView1.Height = dataGridView1.RowCount * dataGridView1.RowTemplate.Height * 2;
+             bitmap = new Bitmap(dataGridView1.Width, dataGridView1.Height);
+             dataGridView1.DrawToBitmap(bitmap,new Rectangle(0,0,dataGridView1.Width,dataGridView1.Height));
+
+             printPreviewDialog1.PrintPreviewControl.Zoom = 1;
+             printPreviewDialog1.ShowDialog();
+             dataGridView1.Height = height;
 
         }
-
+        /// <summary>
+        /// Save to Excel 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void button5Save_Click(object sender, EventArgs e)
         {
+            iSave();
+        }
+
+        private void iSave()
+        {
+           Microsoft.Office.Interop.Excel._Application  app=new Microsoft.Office.Interop.Excel.Application();
+           Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+           Microsoft.Office.Interop.Excel._Worksheet  worksheet= null;
+
+           app.Visible = true;
+           worksheet = workbook.Sheets["sheet1"];
+           worksheet = workbook.ActiveSheet;
+           worksheet.Name = "Exported from GridView";
+
+           for (int i = 1; i < dataGridView1.Columns.Count+1; i++)
+           {
+               worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
+           }
+
+           for (int i = 0; i < dataGridView1.Rows.Count-1; i++)
+           {
+               for (int j = 0; j < dataGridView1.Columns.Count; j++)
+               {
+                   worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+               }
+           }
 
         }
 
@@ -130,6 +175,37 @@ namespace LearningDemo
         private void resetToolStripMenuItem_Click(object sender, EventArgs e)
         {
             iReset();
+        }
+
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            e.Graphics.DrawImage(bitmap,0,0);
+        }
+
+        private void printToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            button3Print_Click(null,null);
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            dataGridView1.ClearSelection();
+
+        }
+
+        
+        
+        private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
+        {
+           
+            e.Row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            e.Row.HeaderCell.Value = (object)string.Format("{0}", (object)(e.Row.Index + 1));
+            
+        }
+
+        private void CS_DataGridView_Save_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

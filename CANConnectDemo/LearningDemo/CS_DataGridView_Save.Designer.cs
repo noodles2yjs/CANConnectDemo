@@ -29,8 +29,8 @@ namespace LearningDemo
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CS_DataGridView_Save));
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1StudentId = new System.Windows.Forms.TextBox();
@@ -54,7 +54,6 @@ namespace LearningDemo
             this.button1AddNew = new System.Windows.Forms.Button();
             this.button2Reset = new System.Windows.Forms.Button();
             this.button3Print = new System.Windows.Forms.Button();
-            this.button4Delete = new System.Windows.Forms.Button();
             this.button5Save = new System.Windows.Forms.Button();
             this.button6Edit = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -181,14 +180,14 @@ namespace LearningDemo
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 30;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.StudentId,
@@ -202,12 +201,12 @@ namespace LearningDemo
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 50;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(1);
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(1);
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(753, 345);
             this.dataGridView1.TabIndex = 2;
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
@@ -271,7 +270,7 @@ namespace LearningDemo
             // 
             this.button2Reset.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2Reset.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button2Reset.Location = new System.Drawing.Point(848, 339);
+            this.button2Reset.Location = new System.Drawing.Point(848, 354);
             this.button2Reset.Name = "button2Reset";
             this.button2Reset.Size = new System.Drawing.Size(103, 35);
             this.button2Reset.TabIndex = 3;
@@ -283,7 +282,7 @@ namespace LearningDemo
             // 
             this.button3Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3Print.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3Print.Location = new System.Drawing.Point(848, 401);
+            this.button3Print.Location = new System.Drawing.Point(848, 431);
             this.button3Print.Name = "button3Print";
             this.button3Print.Size = new System.Drawing.Size(103, 35);
             this.button3Print.TabIndex = 3;
@@ -291,23 +290,11 @@ namespace LearningDemo
             this.button3Print.UseVisualStyleBackColor = true;
             this.button3Print.Click += new System.EventHandler(this.button3Print_Click);
             // 
-            // button4Delete
-            // 
-            this.button4Delete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4Delete.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button4Delete.Location = new System.Drawing.Point(848, 463);
-            this.button4Delete.Name = "button4Delete";
-            this.button4Delete.Size = new System.Drawing.Size(103, 35);
-            this.button4Delete.TabIndex = 3;
-            this.button4Delete.Text = "Delete";
-            this.button4Delete.UseVisualStyleBackColor = true;
-            this.button4Delete.Click += new System.EventHandler(this.button4Delete_Click);
-            // 
             // button5Save
             // 
             this.button5Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5Save.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button5Save.Location = new System.Drawing.Point(848, 525);
+            this.button5Save.Location = new System.Drawing.Point(848, 508);
             this.button5Save.Name = "button5Save";
             this.button5Save.Size = new System.Drawing.Size(103, 35);
             this.button5Save.TabIndex = 3;
@@ -319,7 +306,7 @@ namespace LearningDemo
             // 
             this.button6Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6Edit.Font = new System.Drawing.Font("宋体", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button6Edit.Location = new System.Drawing.Point(848, 587);
+            this.button6Edit.Location = new System.Drawing.Point(848, 585);
             this.button6Edit.Name = "button6Edit";
             this.button6Edit.Size = new System.Drawing.Size(103, 35);
             this.button6Edit.TabIndex = 3;
@@ -420,7 +407,6 @@ namespace LearningDemo
             this.ClientSize = new System.Drawing.Size(1074, 753);
             this.Controls.Add(this.button6Edit);
             this.Controls.Add(this.button5Save);
-            this.Controls.Add(this.button4Delete);
             this.Controls.Add(this.button3Print);
             this.Controls.Add(this.button2Reset);
             this.Controls.Add(this.button1AddNew);
@@ -471,7 +457,6 @@ namespace LearningDemo
         private System.Windows.Forms.Button button1AddNew;
         private System.Windows.Forms.Button button2Reset;
         private System.Windows.Forms.Button button3Print;
-        private System.Windows.Forms.Button button4Delete;
         private System.Windows.Forms.Button button5Save;
         private System.Windows.Forms.Button button6Edit;
         private System.Windows.Forms.DataGridViewTextBoxColumn StudentId;

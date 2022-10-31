@@ -70,7 +70,7 @@ namespace LearningDemo
         {
             this.dataGridView1.Rows.Add(textBox1StudentId.Text, textBox3FirstName.Text, textBox5SurName.Text,
                 textBox2Address.Text, textBox4DOB.Text, textBox6Tel.Text);
-            dataGridView1.ClearSelection();
+           dataGridView1.ClearSelection();
         }
 
         private void iDelete()
@@ -198,8 +198,8 @@ namespace LearningDemo
         private void dataGridView1_RowStateChanged(object sender, DataGridViewRowStateChangedEventArgs e)
         {
            
-            e.Row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            e.Row.HeaderCell.Value = (object)string.Format("{0}", (object)(e.Row.Index + 1));
+            //e.Row.HeaderCell.Style.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            //e.Row.HeaderCell.Value = (object)string.Format("{0}", (object)(e.Row.Index + 1));
             
         }
 

@@ -16,7 +16,8 @@ namespace LearningDemo
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CS_DataGridView_Save());
+          //  Application.Run(new CS_DataGridView_Save());
+            Application.Run(new BHTTestDemo());
         }
     }
 }

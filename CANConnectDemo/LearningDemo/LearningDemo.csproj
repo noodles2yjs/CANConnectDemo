@@ -49,16 +49,34 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BHTTestDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BHTTestDemo.Designer.cs">
+      <DependentUpon>BHTTestDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="CS_DataGridView_Save.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CS_DataGridView_Save.Designer.cs">
       <DependentUpon>CS_DataGridView_Save.cs</DependentUpon>
     </Compile>
+    <Compile Include="PIdTableTestDemo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PIdTableTestDemo.Designer.cs">
+      <DependentUpon>PIdTableTestDemo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="BHTTestDemo.resx">
+      <DependentUpon>BHTTestDemo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CS_DataGridView_Save.resx">
       <DependentUpon>CS_DataGridView_Save.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PIdTableTestDemo.resx">
+      <DependentUpon>PIdTableTestDemo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

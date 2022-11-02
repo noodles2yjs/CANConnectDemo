@@ -22,89 +22,14 @@ namespace LearningDemo
         {
             return Guid.NewGuid().ToString().GetHashCode();
         }
-        //private void InitDgvBHT()
-        //{
-        //    List<double> dataDoubles = new List<double>(); // 接收数据的容器
-        //    List<double> dataZoneData = new List<double>(); // 接收数据的容器
-
-        //    int dataZoneLength = 13;
-        //    int cols = 13;
-        //    int rows = 5;
-        //    int dataCount = cols * rows;
-
-
-        //    // Initialize  DataZone 
-        //    for (int i = 0; i < dataZoneLength; i++)
-        //    {
-        //        Random random = new Random(Seed());
-        //        dataZoneData.Add(random.NextDouble());
-        //    }
-
-        //    // initialize dataDoubles
-        //    for (int i = 0; i < dataCount; i++)
-        //    {
-        //        Random random = new Random(Seed());
-        //        var nextDouble = random.NextDouble();
-        //        dataDoubles.Add(nextDouble);
-        //    }
-
-        //    // 将一维数组转化为二维数组 
-
-
-        //    // Fill data to   dataGridView1BHT
-        //    int flag = 0; // 死区这一行
-        //    for (int i = 0; i < rows; i++)
-        //    {  // 行填充
-        //        Random random = new Random(Seed());
-
-        //        // Add New row to  dataGridView1BHT
-        //        if (i == 1)
-        //        {
-        //            flag = 1; //扭矩 
-        //        }
-
-        //        if (i == 2)
-        //        {
-        //            flag = 2;
-        //        }
-        //        var index = this.dataGridView1BHT.Rows.Add();
-        //        for (int j = 0; j < cols; j++)
-        //        {
-        //            // 列填充 
-        //            if (flag == 0)
-        //            { // 死区
-        //                if (j == 0)
-        //                {
-        //                    this.dataGridView1BHT.Rows[index].Cells[j].Value = "死区";
-        //                }
-        //                else
-        //                {
-        //                    this.dataGridView1BHT.Rows[index].Cells[j].Value = random.NextDouble();
-        //                }
-
-
-        //            }
-
-        //            else if (flag == 1)
-        //            {
-        //                if (j == 0)
-        //                {
-        //                    this.dataGridView1BHT.Rows[index].Cells[j].Value = "扭矩";
-        //                }
-        //                else
-        //                {
-        //                    this.dataGridView1BHT.Rows[index].Cells[j].Value = $"Tout{j}";
-        //                }
-
-
-        //            }
-        //            else
-        //            { this.dataGridView1BHT.Rows[index].Cells[j].Value = random.NextDouble(); }
-
-        //        }
-        //    }
-        //}
-
+       
+        /// <summary>
+        /// 一维数组转二维数组
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="vec">一维数组</param>
+        /// <param name="row">二维数组的行数</param>
+        /// <returns></returns>
         static T[,] Row2ArrT<T>(T[] vec, int row)
         {
             if (vec.Length % row != 0) return null;
@@ -115,6 +40,32 @@ namespace LearningDemo
                 ret[i / col, i % col] = vec[i];
             }
             return ret;
+        }
+
+        /// <summary>
+        /// 矩阵转置
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="arr1">待转置的数组</param>
+        public static T[,] CTL<T>(T[,] arr1)
+        {
+            //执行换行 // 3行3列
+            // 计算 Matrix 的行与列  不会
+            int row = arr1.GetLength(0);
+            int col = arr1.GetLength(1);
+            int trow = col;
+            int tcol = row;
+
+            T[,] arr2 = new T[trow, tcol];
+            for (int i = 0; i < trow; i++)
+            {
+                for (int j = 0; j < tcol; j++)
+                {
+                    arr2[i, j] = arr1[j, i]; // 转置
+                }
+            }
+
+            return arr2;
         }
         private Bitmap bitmap;
         private void button1Print_Click(object sender, EventArgs e)
@@ -164,22 +115,20 @@ namespace LearningDemo
             iSave();
         }
 
-
-
         private void InitDgvBHT()
-        {
+        {  // 一维数组转化为二维数组  一列一列的转化
             // 发过来的数据为 一维数组,
-            List<double> dataDoubles = new List<double>(); // 接收数据的容器
-            List<double> dataZoneData = new List<double>(); // 接收数据的容器
+            List<string> data = new List<string>(); // 接收数据的容器
+            List<string> dataZoneData = new List<string>(); // 接收数据的容器
 
-           
-            int cols = 13;
-            int rows = 5;
 
-            int dataZoneLength = cols - 1;
+            int dgvCols = 13;
+            int dgvRows = 5;
+
+            int dataZoneLength = dgvCols - 1;
             // 数据
-            int dataCols = cols - 1;
-            int dataRows = rows - 2;
+            int dataCols = dgvRows - 2;
+            int dataRows = dgvCols - 1;
             int dataCount = dataCols * dataRows;
 
 
@@ -187,24 +136,67 @@ namespace LearningDemo
             for (int i = 0; i < dataZoneLength; i++)
             {
                 Random random = new Random(Seed());
-                dataZoneData.Add(random.NextDouble());
+                dataZoneData.Add(random.NextDouble().ToString("0.00"));
             }
 
             // initialize dataDoubles (模拟接收一维数组数据)
             for (int i = 0; i < dataCount; i++)
             {
                 Random random = new Random(Seed());
-                var nextDouble = random.NextDouble();
-                dataDoubles.Add(nextDouble);
+                var nextDouble = random.NextDouble().ToString("0.00");
+                data.Add(nextDouble);
             }
 
             // 将一维数组转化为二维数组 
-            var dataArray = dataDoubles.ToArray();
-            var c = Row2ArrT(dataArray, 3);
+            var dataArray = data.ToArray();
+            int irows = dataRows; // 
+            var c = Row2ArrT(dataArray, irows);
 
-            // Fill data to   dataGridView1BHT
+            // 二维数组转置
+            var tc = CTL(c);
+            var tcRow = tc.GetLength(0);
+            var tcCol = tc.GetLength(1);
+
+           // int icols = dataArray.Length / irows;
+            Console.WriteLine("一维数组(传过来的数据):");
+            foreach (var item in dataArray)
+            {
+                Console.Write(item + "\t");
+            }
+
+            Console.WriteLine();
+            Console.WriteLine("============ Dividing line ============");
+
+            // 
+            Console.WriteLine("c 二维数组:");
+            for (int i = 0; i < c.GetLength(0); i++)
+            {
+                for (int j = 0; j < c.GetLength(1); j++)
+                {
+                    Console.Write(c[i, j] + "\t");
+                }
+
+                Console.WriteLine();
+            }
+            Console.WriteLine("============ Dividing line ============");
+            Console.WriteLine("转置后的二维数组:");
+            for (int i = 0; i < tc.GetLength(0); i++)
+            {
+                for (int j = 0; j < tc.GetLength(1); j++)
+                {
+                    Console.Write(tc[i, j] + "\t");
+                }
+
+                Console.WriteLine();
+            }
+
+
+            // Fill  data to   dataGridView1BHT
+
+          //  int tcRow = tc.GetLength(0);
+            
             int flag = 0; // 死区这一行
-            for (int i = 0; i < rows; i++)
+            for (int i = 0; i < dgvRows; i++)
             {  // 行填充
                 Random random = new Random(Seed());
 
@@ -216,10 +208,10 @@ namespace LearningDemo
 
                 if (i == 2)
                 {
-                    flag = 2;
+                    flag = 2;  // 其他行
                 }
                 var index = this.dataGridView1BHT.Rows.Add();
-                for (int j = 0; j < cols; j++)
+                for (int j = 0; j < dgvCols; j++)
                 {
                     // 列填充 
                     if (flag == 0)
@@ -227,10 +219,12 @@ namespace LearningDemo
                         if (j == 0)
                         {
                             this.dataGridView1BHT.Rows[index].Cells[j].Value = "死区";
+                            continue;
                         }
                         else
                         {
                             this.dataGridView1BHT.Rows[index].Cells[j].Value = dataZoneData[j - 1];
+                            continue;
                         }
 
 
@@ -241,18 +235,20 @@ namespace LearningDemo
                         if (j == 0)
                         {
                             this.dataGridView1BHT.Rows[index].Cells[j].Value = "扭矩";
+                            continue;
                         }
                         else
                         {
                             this.dataGridView1BHT.Rows[index].Cells[j].Value = $"Tout{j}";
+                            continue;
                         }
 
 
                     }
                     else
                     {
-                        // 填充二维数组  
-                        this.dataGridView1BHT.Rows[index].Cells[j].Value = random.NextDouble();
+                        // 填充转置后的二维数组  
+                        //  this.dataGridView1BHT.Rows[index].Cells[j].Value = random.NextDouble();
 
                         if (j == 0)
                         {
@@ -261,7 +257,7 @@ namespace LearningDemo
                         else
                         {
 
-                            this.dataGridView1BHT.Rows[index].Cells[j].Value = c[i - 2, j - 1];
+                           this.dataGridView1BHT.Rows[index].Cells[j].Value = tc[i-2,j-1];
                         }
 
                     }
@@ -271,7 +267,7 @@ namespace LearningDemo
 
             // 清除默认选中
             this.dataGridView1BHT.ClearSelection();
-           // this.dataGridView1BHT.ClearSelection();
+            // this.dataGridView1BHT.ClearSelection();
         }
     }
 }

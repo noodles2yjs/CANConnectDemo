@@ -284,11 +284,15 @@ namespace CANConnectDemo
                 MessageBox.Show("粘贴区域大小不一致","提示信息");
                 return;
             }
+
+            // 定义一个二维数组
             String[][] temp = new String[rownum][];
             for (int i = 0; i < rownum; i++)
             {
                 temp[i] = new String[colnum];
             }
+
+
             int m = 0, n = 0, len = 0;
             while (len != clipboardText.Length)
             {

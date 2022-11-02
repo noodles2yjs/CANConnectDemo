@@ -85,7 +85,7 @@ namespace LearningDemo
             this.dataGridView1BHT.Name = "dataGridView1BHT";
             this.dataGridView1BHT.RowHeadersVisible = false;
             this.dataGridView1BHT.RowTemplate.Height = 23;
-            this.dataGridView1BHT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1BHT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1BHT.Size = new System.Drawing.Size(766, 311);
             this.dataGridView1BHT.TabIndex = 0;
             // 

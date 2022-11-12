@@ -100,7 +100,7 @@ namespace LearningDemo
                 worksheet.Cells[1, i] = dataGridView1BHT.Columns[i - 1].HeaderText;
             }
 
-            for (int i = 0; i < dataGridView1BHT.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1BHT.Rows.Count ; i++)
             {
                 for (int j = 0; j < dataGridView1BHT.Columns.Count; j++)
                 {
@@ -121,9 +121,8 @@ namespace LearningDemo
             List<string> data = new List<string>(); // 接收数据的容器
             List<string> dataZoneData = new List<string>(); // 接收数据的容器
 
-
             int dgvCols = 13;
-            int dgvRows = 5;
+            int dgvRows = 12;
 
             int dataZoneLength = dgvCols - 1;
             // 数据

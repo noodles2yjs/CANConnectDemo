@@ -30,10 +30,11 @@ namespace CANConnectDemo
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btnShowBHPCurve = new System.Windows.Forms.Button();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SystemStandard));
+            this.btn_ShowBHTCurve = new System.Windows.Forms.Button();
             this.tabPID = new System.Windows.Forms.TabPage();
             this.btnReloadTempProtection = new System.Windows.Forms.Button();
             this.btnShowTempProtection = new System.Windows.Forms.Button();
@@ -142,7 +143,23 @@ namespace CANConnectDemo
             this.label6 = new System.Windows.Forms.Label();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.tabPageBHT = new System.Windows.Forms.TabPage();
+            this.tab_BHT = new System.Windows.Forms.TabPage();
+            this.btn_Save = new System.Windows.Forms.Button();
+            this.btn_Print = new System.Windows.Forms.Button();
+            this.dgv_BHT = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox5 = new System.Windows.Forms.TextBox();
@@ -157,22 +174,8 @@ namespace CANConnectDemo
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
+            this.btn_Clear = new System.Windows.Forms.Button();
             this.btnReload = new System.Windows.Forms.Button();
-            this.dataGridViewBHT = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleSpeedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop00DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop05DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop10DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop30DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop40DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop50DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop60DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop70DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop80DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop90DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.prop100DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.standardBasicHelpTableModelBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button5 = new System.Windows.Forms.Button();
@@ -186,6 +189,8 @@ namespace CANConnectDemo
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.button11 = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
+            this.printPreviewDialog1 = new System.Windows.Forms.PrintPreviewDialog();
+            this.printDocument1 = new System.Drawing.Printing.PrintDocument();
             this.tabPID.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTempProtection)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standardTempProtectionModelBindingSource)).BeginInit();
@@ -199,21 +204,20 @@ namespace CANConnectDemo
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
-            this.tabPageBHT.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBHT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standardBasicHelpTableModelBindingSource)).BeginInit();
+            this.tab_BHT.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BHT)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // btnShowBHPCurve
+            // btn_ShowBHTCurve
             // 
-            this.btnShowBHPCurve.Location = new System.Drawing.Point(873, 32);
-            this.btnShowBHPCurve.Name = "btnShowBHPCurve";
-            this.btnShowBHPCurve.Size = new System.Drawing.Size(87, 35);
-            this.btnShowBHPCurve.TabIndex = 1;
-            this.btnShowBHPCurve.Text = "显示曲线";
-            this.btnShowBHPCurve.UseVisualStyleBackColor = true;
-            this.btnShowBHPCurve.Click += new System.EventHandler(this.btnShowBHPCurve_Click);
+            this.btn_ShowBHTCurve.Location = new System.Drawing.Point(873, 32);
+            this.btn_ShowBHTCurve.Name = "btn_ShowBHTCurve";
+            this.btn_ShowBHTCurve.Size = new System.Drawing.Size(87, 35);
+            this.btn_ShowBHTCurve.TabIndex = 1;
+            this.btn_ShowBHTCurve.Text = "显示曲线";
+            this.btn_ShowBHTCurve.UseVisualStyleBackColor = true;
+            this.btn_ShowBHTCurve.Click += new System.EventHandler(this.btn_ShowBHTCurve_Click);
             // 
             // tabPID
             // 
@@ -279,7 +283,6 @@ namespace CANConnectDemo
             this.btnShowPID.TabIndex = 12;
             this.btnShowPID.Text = "显示PID曲线";
             this.btnShowPID.UseVisualStyleBackColor = true;
-            this.btnShowPID.Click += new System.EventHandler(this.btnShowPID_Click);
             // 
             // textBox32
             // 
@@ -379,14 +382,14 @@ namespace CANConnectDemo
             // 
             this.dataGridViewTempProtection.AutoGenerateColumns = false;
             this.dataGridViewTempProtection.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTempProtection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTempProtection.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridViewTempProtection.ColumnHeadersHeight = 30;
             this.dataGridViewTempProtection.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn2,
@@ -470,14 +473,14 @@ namespace CANConnectDemo
             // 
             this.dataGridViewPID.AutoGenerateColumns = false;
             this.dataGridViewPID.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewPID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewPID.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridViewPID.ColumnHeadersHeight = 30;
             this.dataGridViewPID.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.idDataGridViewTextBoxColumn1,
@@ -1256,33 +1259,176 @@ namespace CANConnectDemo
             this.label5.TabIndex = 4;
             this.label5.Text = "扭矩偏移";
             // 
-            // tabPageBHT
+            // tab_BHT
             // 
-            this.tabPageBHT.Controls.Add(this.textBox7);
-            this.tabPageBHT.Controls.Add(this.textBox6);
-            this.tabPageBHT.Controls.Add(this.textBox5);
-            this.tabPageBHT.Controls.Add(this.textBox4);
-            this.tabPageBHT.Controls.Add(this.textBox3);
-            this.tabPageBHT.Controls.Add(this.label3);
-            this.tabPageBHT.Controls.Add(this.textBox2);
-            this.tabPageBHT.Controls.Add(this.label2);
-            this.tabPageBHT.Controls.Add(this.textBox1);
-            this.tabPageBHT.Controls.Add(this.label1);
-            this.tabPageBHT.Controls.Add(this.button4);
-            this.tabPageBHT.Controls.Add(this.button3);
-            this.tabPageBHT.Controls.Add(this.button2);
-            this.tabPageBHT.Controls.Add(this.button1);
-            this.tabPageBHT.Controls.Add(this.btnReload);
-            this.tabPageBHT.Controls.Add(this.btnShowBHPCurve);
-            this.tabPageBHT.Controls.Add(this.dataGridViewBHT);
-            this.tabPageBHT.Location = new System.Drawing.Point(4, 26);
-            this.tabPageBHT.Margin = new System.Windows.Forms.Padding(4);
-            this.tabPageBHT.Name = "tabPageBHT";
-            this.tabPageBHT.Padding = new System.Windows.Forms.Padding(4);
-            this.tabPageBHT.Size = new System.Drawing.Size(1069, 669);
-            this.tabPageBHT.TabIndex = 0;
-            this.tabPageBHT.Text = "基本助力表";
-            this.tabPageBHT.UseVisualStyleBackColor = true;
+            this.tab_BHT.Controls.Add(this.btn_Save);
+            this.tab_BHT.Controls.Add(this.btn_Print);
+            this.tab_BHT.Controls.Add(this.dgv_BHT);
+            this.tab_BHT.Controls.Add(this.textBox7);
+            this.tab_BHT.Controls.Add(this.textBox6);
+            this.tab_BHT.Controls.Add(this.textBox5);
+            this.tab_BHT.Controls.Add(this.textBox4);
+            this.tab_BHT.Controls.Add(this.textBox3);
+            this.tab_BHT.Controls.Add(this.label3);
+            this.tab_BHT.Controls.Add(this.textBox2);
+            this.tab_BHT.Controls.Add(this.label2);
+            this.tab_BHT.Controls.Add(this.textBox1);
+            this.tab_BHT.Controls.Add(this.label1);
+            this.tab_BHT.Controls.Add(this.button4);
+            this.tab_BHT.Controls.Add(this.button3);
+            this.tab_BHT.Controls.Add(this.button2);
+            this.tab_BHT.Controls.Add(this.button1);
+            this.tab_BHT.Controls.Add(this.btn_Clear);
+            this.tab_BHT.Controls.Add(this.btnReload);
+            this.tab_BHT.Controls.Add(this.btn_ShowBHTCurve);
+            this.tab_BHT.Location = new System.Drawing.Point(4, 26);
+            this.tab_BHT.Margin = new System.Windows.Forms.Padding(4);
+            this.tab_BHT.Name = "tab_BHT";
+            this.tab_BHT.Padding = new System.Windows.Forms.Padding(4);
+            this.tab_BHT.Size = new System.Drawing.Size(1069, 669);
+            this.tab_BHT.TabIndex = 0;
+            this.tab_BHT.Text = "基本助力表";
+            this.tab_BHT.UseVisualStyleBackColor = true;
+            // 
+            // btn_Save
+            // 
+            this.btn_Save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Save.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Save.Location = new System.Drawing.Point(981, 585);
+            this.btn_Save.Name = "btn_Save";
+            this.btn_Save.Size = new System.Drawing.Size(77, 36);
+            this.btn_Save.TabIndex = 5;
+            this.btn_Save.Text = "Save";
+            this.btn_Save.UseVisualStyleBackColor = true;
+            this.btn_Save.Click += new System.EventHandler(this.btn_Save_Click);
+            // 
+            // btn_Print
+            // 
+            this.btn_Print.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_Print.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.btn_Print.Location = new System.Drawing.Point(881, 585);
+            this.btn_Print.Name = "btn_Print";
+            this.btn_Print.Size = new System.Drawing.Size(77, 36);
+            this.btn_Print.TabIndex = 6;
+            this.btn_Print.Text = "Print";
+            this.btn_Print.UseVisualStyleBackColor = true;
+            this.btn_Print.Click += new System.EventHandler(this.btn_Print_Click);
+            // 
+            // dgv_BHT
+            // 
+            this.dgv_BHT.AllowUserToAddRows = false;
+            this.dgv_BHT.AllowUserToDeleteRows = false;
+            this.dgv_BHT.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_BHT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            this.dgv_BHT.ColumnHeadersHeight = 30;
+            this.dgv_BHT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.Column5,
+            this.Column6,
+            this.Column7,
+            this.Column8,
+            this.Column9,
+            this.Column10,
+            this.Column11,
+            this.Column12,
+            this.Column13});
+            this.dgv_BHT.EnableHeadersVisualStyles = false;
+            this.dgv_BHT.Location = new System.Drawing.Point(17, 32);
+            this.dgv_BHT.Name = "dgv_BHT";
+            this.dgv_BHT.RowHeadersVisible = false;
+            this.dgv_BHT.RowTemplate.Height = 23;
+            this.dgv_BHT.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
+            this.dgv_BHT.Size = new System.Drawing.Size(801, 589);
+            this.dgv_BHT.TabIndex = 4;
+            this.dgv_BHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dgv_BHT_KeyPress);
+            // 
+            // Column1
+            // 
+            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column1.HeaderText = "车速";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column2.HeaderText = "0";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column3.HeaderText = "5";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column4.HeaderText = "10";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column5.HeaderText = "20";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column6.HeaderText = "30";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column7.HeaderText = "40";
+            this.Column7.Name = "Column7";
+            // 
+            // Column8
+            // 
+            this.Column8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column8.HeaderText = "50";
+            this.Column8.Name = "Column8";
+            // 
+            // Column9
+            // 
+            this.Column9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column9.HeaderText = "60";
+            this.Column9.Name = "Column9";
+            // 
+            // Column10
+            // 
+            this.Column10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column10.HeaderText = "70";
+            this.Column10.Name = "Column10";
+            // 
+            // Column11
+            // 
+            this.Column11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column11.HeaderText = "80";
+            this.Column11.Name = "Column11";
+            // 
+            // Column12
+            // 
+            this.Column12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column12.HeaderText = "90";
+            this.Column12.Name = "Column12";
+            // 
+            // Column13
+            // 
+            this.Column13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Column13.HeaderText = "100";
+            this.Column13.Name = "Column13";
             // 
             // textBox7
             // 
@@ -1318,7 +1464,7 @@ namespace CANConnectDemo
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(891, 301);
+            this.textBox3.Location = new System.Drawing.Point(881, 330);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(119, 26);
             this.textBox3.TabIndex = 3;
@@ -1327,7 +1473,7 @@ namespace CANConnectDemo
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(888, 262);
+            this.label3.Location = new System.Drawing.Point(878, 291);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 16);
             this.label3.TabIndex = 2;
@@ -1335,7 +1481,7 @@ namespace CANConnectDemo
             // 
             // textBox2
             // 
-            this.textBox2.Location = new System.Drawing.Point(891, 220);
+            this.textBox2.Location = new System.Drawing.Point(881, 249);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(119, 26);
             this.textBox2.TabIndex = 3;
@@ -1344,7 +1490,7 @@ namespace CANConnectDemo
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(888, 181);
+            this.label2.Location = new System.Drawing.Point(878, 210);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(104, 16);
             this.label2.TabIndex = 2;
@@ -1352,7 +1498,7 @@ namespace CANConnectDemo
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(891, 135);
+            this.textBox1.Location = new System.Drawing.Point(881, 164);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(119, 26);
             this.textBox1.TabIndex = 3;
@@ -1361,7 +1507,7 @@ namespace CANConnectDemo
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(888, 96);
+            this.label1.Location = new System.Drawing.Point(878, 125);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 16);
             this.label1.TabIndex = 2;
@@ -1411,6 +1557,16 @@ namespace CANConnectDemo
             this.button1.Text = "加";
             this.button1.UseVisualStyleBackColor = false;
             // 
+            // btn_Clear
+            // 
+            this.btn_Clear.Location = new System.Drawing.Point(873, 73);
+            this.btn_Clear.Name = "btn_Clear";
+            this.btn_Clear.Size = new System.Drawing.Size(177, 30);
+            this.btn_Clear.TabIndex = 1;
+            this.btn_Clear.Text = "清除数据";
+            this.btn_Clear.UseVisualStyleBackColor = true;
+            this.btn_Clear.Click += new System.EventHandler(this.btn_Clear_Click);
+            // 
             // btnReload
             // 
             this.btnReload.Location = new System.Drawing.Point(975, 32);
@@ -1421,142 +1577,9 @@ namespace CANConnectDemo
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
-            // dataGridViewBHT
-            // 
-            this.dataGridViewBHT.AllowUserToOrderColumns = true;
-            this.dataGridViewBHT.AutoGenerateColumns = false;
-            this.dataGridViewBHT.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewBHT.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dataGridViewBHT.ColumnHeadersHeight = 30;
-            this.dataGridViewBHT.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.vehicleSpeedDataGridViewTextBoxColumn,
-            this.prop00DataGridViewTextBoxColumn,
-            this.prop05DataGridViewTextBoxColumn,
-            this.prop10DataGridViewTextBoxColumn,
-            this.prop30DataGridViewTextBoxColumn,
-            this.prop40DataGridViewTextBoxColumn,
-            this.prop50DataGridViewTextBoxColumn,
-            this.prop60DataGridViewTextBoxColumn,
-            this.prop70DataGridViewTextBoxColumn,
-            this.prop80DataGridViewTextBoxColumn,
-            this.prop90DataGridViewTextBoxColumn,
-            this.prop100DataGridViewTextBoxColumn});
-            this.dataGridViewBHT.DataSource = this.standardBasicHelpTableModelBindingSource;
-            this.dataGridViewBHT.EnableHeadersVisualStyles = false;
-            this.dataGridViewBHT.Location = new System.Drawing.Point(7, 20);
-            this.dataGridViewBHT.Name = "dataGridViewBHT";
-            this.dataGridViewBHT.RowTemplate.Height = 23;
-            this.dataGridViewBHT.Size = new System.Drawing.Size(839, 560);
-            this.dataGridViewBHT.TabIndex = 0;
-            this.dataGridViewBHT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridViewBHT_KeyPress);
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // vehicleSpeedDataGridViewTextBoxColumn
-            // 
-            this.vehicleSpeedDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.vehicleSpeedDataGridViewTextBoxColumn.DataPropertyName = "VehicleSpeed";
-            this.vehicleSpeedDataGridViewTextBoxColumn.HeaderText = "车速";
-            this.vehicleSpeedDataGridViewTextBoxColumn.Name = "vehicleSpeedDataGridViewTextBoxColumn";
-            // 
-            // prop00DataGridViewTextBoxColumn
-            // 
-            this.prop00DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop00DataGridViewTextBoxColumn.DataPropertyName = "Prop00";
-            this.prop00DataGridViewTextBoxColumn.HeaderText = "00";
-            this.prop00DataGridViewTextBoxColumn.Name = "prop00DataGridViewTextBoxColumn";
-            // 
-            // prop05DataGridViewTextBoxColumn
-            // 
-            this.prop05DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop05DataGridViewTextBoxColumn.DataPropertyName = "Prop05";
-            this.prop05DataGridViewTextBoxColumn.HeaderText = "05";
-            this.prop05DataGridViewTextBoxColumn.Name = "prop05DataGridViewTextBoxColumn";
-            // 
-            // prop10DataGridViewTextBoxColumn
-            // 
-            this.prop10DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop10DataGridViewTextBoxColumn.DataPropertyName = "Prop10";
-            this.prop10DataGridViewTextBoxColumn.HeaderText = "10";
-            this.prop10DataGridViewTextBoxColumn.Name = "prop10DataGridViewTextBoxColumn";
-            // 
-            // prop30DataGridViewTextBoxColumn
-            // 
-            this.prop30DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop30DataGridViewTextBoxColumn.DataPropertyName = "Prop30";
-            this.prop30DataGridViewTextBoxColumn.HeaderText = "30";
-            this.prop30DataGridViewTextBoxColumn.Name = "prop30DataGridViewTextBoxColumn";
-            // 
-            // prop40DataGridViewTextBoxColumn
-            // 
-            this.prop40DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop40DataGridViewTextBoxColumn.DataPropertyName = "Prop40";
-            this.prop40DataGridViewTextBoxColumn.HeaderText = "40";
-            this.prop40DataGridViewTextBoxColumn.Name = "prop40DataGridViewTextBoxColumn";
-            // 
-            // prop50DataGridViewTextBoxColumn
-            // 
-            this.prop50DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop50DataGridViewTextBoxColumn.DataPropertyName = "Prop50";
-            this.prop50DataGridViewTextBoxColumn.HeaderText = "50";
-            this.prop50DataGridViewTextBoxColumn.Name = "prop50DataGridViewTextBoxColumn";
-            // 
-            // prop60DataGridViewTextBoxColumn
-            // 
-            this.prop60DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop60DataGridViewTextBoxColumn.DataPropertyName = "Prop60";
-            this.prop60DataGridViewTextBoxColumn.HeaderText = "60";
-            this.prop60DataGridViewTextBoxColumn.Name = "prop60DataGridViewTextBoxColumn";
-            // 
-            // prop70DataGridViewTextBoxColumn
-            // 
-            this.prop70DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop70DataGridViewTextBoxColumn.DataPropertyName = "Prop70";
-            this.prop70DataGridViewTextBoxColumn.HeaderText = "70";
-            this.prop70DataGridViewTextBoxColumn.Name = "prop70DataGridViewTextBoxColumn";
-            // 
-            // prop80DataGridViewTextBoxColumn
-            // 
-            this.prop80DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop80DataGridViewTextBoxColumn.DataPropertyName = "Prop80";
-            this.prop80DataGridViewTextBoxColumn.HeaderText = "80";
-            this.prop80DataGridViewTextBoxColumn.Name = "prop80DataGridViewTextBoxColumn";
-            // 
-            // prop90DataGridViewTextBoxColumn
-            // 
-            this.prop90DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop90DataGridViewTextBoxColumn.DataPropertyName = "Prop90";
-            this.prop90DataGridViewTextBoxColumn.HeaderText = "90";
-            this.prop90DataGridViewTextBoxColumn.Name = "prop90DataGridViewTextBoxColumn";
-            // 
-            // prop100DataGridViewTextBoxColumn
-            // 
-            this.prop100DataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.prop100DataGridViewTextBoxColumn.DataPropertyName = "Prop100";
-            this.prop100DataGridViewTextBoxColumn.HeaderText = "100";
-            this.prop100DataGridViewTextBoxColumn.Name = "prop100DataGridViewTextBoxColumn";
-            // 
-            // standardBasicHelpTableModelBindingSource
-            // 
-            this.standardBasicHelpTableModelBindingSource.DataSource = typeof(Models.StandardBasicHelpTableModel);
-            // 
             // tabControl1
             // 
-            this.tabControl1.Controls.Add(this.tabPageBHT);
+            this.tabControl1.Controls.Add(this.tab_BHT);
             this.tabControl1.Controls.Add(this.tabPageBCA);
             this.tabControl1.Controls.Add(this.tabPID);
             this.tabControl1.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
@@ -1693,6 +1716,21 @@ namespace CANConnectDemo
             this.button12.Text = "导出参数";
             this.button12.UseVisualStyleBackColor = false;
             // 
+            // printPreviewDialog1
+            // 
+            this.printPreviewDialog1.AutoScrollMargin = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.AutoScrollMinSize = new System.Drawing.Size(0, 0);
+            this.printPreviewDialog1.ClientSize = new System.Drawing.Size(400, 300);
+            this.printPreviewDialog1.Document = this.printDocument1;
+            this.printPreviewDialog1.Enabled = true;
+            this.printPreviewDialog1.Icon = ((System.Drawing.Icon)(resources.GetObject("printPreviewDialog1.Icon")));
+            this.printPreviewDialog1.Name = "printPreviewDialog1";
+            this.printPreviewDialog1.Visible = false;
+            // 
+            // printDocument1
+            // 
+            this.printDocument1.PrintPage += new System.Drawing.Printing.PrintPageEventHandler(this.printDocument1_PrintPage);
+            // 
             // SystemStandard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
@@ -1712,9 +1750,11 @@ namespace CANConnectDemo
             this.Controls.Add(this.button7);
             this.Controls.Add(this.button5);
             this.Font = new System.Drawing.Font("宋体", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "SystemStandard";
-            this.Text = "SystemStandard2";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "SystemStandard";
             this.tabPID.ResumeLayout(false);
             this.tabPID.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewTempProtection)).EndInit();
@@ -1733,10 +1773,9 @@ namespace CANConnectDemo
             ((System.ComponentModel.ISupportInitialize)(this.trackBar3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
-            this.tabPageBHT.ResumeLayout(false);
-            this.tabPageBHT.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBHT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standardBasicHelpTableModelBindingSource)).EndInit();
+            this.tab_BHT.ResumeLayout(false);
+            this.tab_BHT.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_BHT)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1744,12 +1783,11 @@ namespace CANConnectDemo
         }
 
         #endregion
-        private System.Windows.Forms.Button btnShowBHPCurve;
+        private System.Windows.Forms.Button btn_ShowBHTCurve;
         private System.Windows.Forms.TabPage tabPID;
         private System.Windows.Forms.TabPage tabPageBCA;
-        private System.Windows.Forms.TabPage tabPageBHT;
+        private System.Windows.Forms.TabPage tab_BHT;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.DataGridView dataGridViewBHT;
         private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.TextBox textBox5;
@@ -1764,20 +1802,6 @@ namespace CANConnectDemo
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vehicleSpeedDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop00DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop05DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop10DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop30DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop40DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop50DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop60DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop70DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop80DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop90DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn prop100DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource standardBasicHelpTableModelBindingSource;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button6;
@@ -1897,5 +1921,24 @@ namespace CANConnectDemo
         private System.Windows.Forms.Button btnReload;
         private System.Windows.Forms.Button btnReloadTempProtection;
         private System.Windows.Forms.Button btnPIdReload;
+        private System.Windows.Forms.DataGridView dgv_BHT;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
+        private System.Windows.Forms.Button btn_Save;
+        private System.Windows.Forms.Button btn_Print;
+        private System.Windows.Forms.PrintPreviewDialog printPreviewDialog1;
+        private System.Drawing.Printing.PrintDocument printDocument1;
+        private System.Windows.Forms.Button btn_Clear;
     }
 }

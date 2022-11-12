@@ -115,6 +115,7 @@ namespace LearningDemo
             iSave();
         }
 
+        
         private void InitDgvBHT()
         {  // 一维数组转化为二维数组  一列一列的转化
             // 发过来的数据为 一维数组,
@@ -149,7 +150,10 @@ namespace LearningDemo
             // 将一维数组转化为二维数组 
             var dataArray = data.ToArray();
             int irows = dataRows; // 
+            // 二维数组  -- 为显示曲线提供数据
             var c = Row2ArrT(dataArray, irows);
+            //  添加到字典里
+            // dicDgvs.Add(this.);
 
             // 二维数组转置
             var tc = CTL(c);
@@ -266,7 +270,7 @@ namespace LearningDemo
 
             // 清除默认选中
             this.dataGridView1BHT.ClearSelection();
-            // this.dataGridView1BHT.ClearSelection();
+            return c;
         }
     }
 }
